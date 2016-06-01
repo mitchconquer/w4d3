@@ -1,0 +1,15 @@
+<h1>Create a new User</h1>
+
+<form action="/users" method="post">
+  <label for="user_user_name">Username: </label>
+  <input type="text" name="user[user_name]" value="<%= @user.user_name %>" id="user_user_name">
+  <br><br>
+  <%= authenticity_token_field %>
+
+  <label for="user_password">Password: </label>
+  <input type="text" name="user[password]" value="<%= @user.password %>" id="user_password">
+
+  <br><br>
+
+  <input type="submit" value="Register">
+</form>
