@@ -11,11 +11,16 @@ class User < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :user_id,
     class_name: 'CatRentalRequest'
-    
+
   has_many :cats,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: 'Cat'
+
+    has_many :session_tokens,
+      primary_key: :id,
+      foreign_key: :user_id,
+      class_name: 'SessionToken'
 
   def reset_session_token!
     self.session_token = SecureRandom.base64

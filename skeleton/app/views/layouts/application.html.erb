@@ -9,10 +9,10 @@
 <body>
   <% if current_user %>
     <p>
-      Welcome <%= current_user.user_name %>  |  <%= button_to "logout", session_url, method: :delete %>
+      Welcome <%= current_user.user_name %>  |  <%= button_to "logout", session_token_url, method: :delete %>
     </p>
     <% else %>
-    <%= link_to "login", new_session_url %>
+    <%= link_to "login", new_session_token_url %>
     <% end %>
 <%= yield %>
 
